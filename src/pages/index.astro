@@ -1,0 +1,38 @@
+---
+// layouts
+import Layout from "../layouts/Layout.astro";
+import Section from "../layouts/Section.astro";
+
+// components
+import Hero from "../components/Hero.astro";
+import Button from "../components/Button.astro";
+import Footer from "../components/Footer.astro";
+
+// data
+import { sections } from "../data";
+---
+
+<Layout title="Huddle Landing Page">
+  <Hero />
+  <!-- Main Content -->
+  <main>
+    <!-- features section -->
+    <div class="px-8">
+      {sections.map((section) => <Section {...section} />)}
+    </div>
+    <!-- call to action -->
+    <div class="bg-call-to-action flex justify-center items-center">
+      <div
+        class="bg-white grid place-items-center w-full max-w-2xl gap-4 p-8 m-8 rounded-lg shadow-xl"
+      >
+        <h2
+          class="text-cyan-dark text-xl md:text-2xl text-center min-[480px]:whitespace-nowrap font-semibold"
+        >
+          Ready To Build Your Community?
+        </h2>
+        <Button>Get Started For Free</Button>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

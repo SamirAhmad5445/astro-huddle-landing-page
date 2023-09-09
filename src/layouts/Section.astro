@@ -1,0 +1,28 @@
+---
+export interface Props {
+  title: string;
+  imgURL: string;
+  content: string;
+  reversed?: boolean;
+}
+const { title, imgURL, content, reversed = false } = Astro.props;
+---
+
+<section
+  class={`max-w-[64rem] flex justify-end items-center gap-12 p-6 md:ps-16 mx-auto my-12 rounded-lg ${
+    reversed ? "lg:flex-row-reverse" : ""
+  } max-md:flex-col-reverse max-md:text-center max-md:py-10 max-md:px-12 shadow-xl`}
+>
+  <div class="flex-1">
+    <h2 class="text-cyan-dark text-xl mb-4">{title}</h2>
+    <p class="max-w-lg text-gray">{content}</p>
+  </div>
+
+  <div class="flex-1 grid place-content-center p-4">
+    <img
+      src={imgURL}
+      alt={`${title} illustration`}
+      class="max-w-[22.5rem] w-full object-cover"
+    />
+  </div>
+</section>

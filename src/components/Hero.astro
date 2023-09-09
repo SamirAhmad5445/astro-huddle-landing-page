@@ -1,0 +1,34 @@
+---
+import Navbar from "./Navbar.astro";
+import Button from "./Button.astro";
+---
+
+<section class="bg-hero md:bg-hero-mobile bg-cyan w-full py-2">
+  <header>
+    <Navbar />
+  </header>
+
+  <div
+    class="container flex items-center justify-center gap-8 mx-auto p-14 md:pb-20 max-lg:flex-col max-lg:text-center"
+  >
+    <div class="flex-1">
+      <h1 class="text-4xl font-heading leading-[3rem] mb-8">
+        Build The Community<br />
+         Your Fans Will Love
+      </h1>
+      <p class="text-cyan-dark max-w-lg mb-8">
+        Huddle re-imagines the way we build communities. You have a voice, but
+        so does your audience. Create connections with your users as you engage
+        in genuine discussion.
+      </p>
+      <Button>Get Started For Free</Button>
+    </div>
+    <div class="flex-1 grid place-content-center">
+      <img
+        src="/assets/illustration-mockups.svg"
+        alt="mockups illustration image"
+        class="w-full object-cover"
+      />
+    </div>
+  </div>
+</section>
